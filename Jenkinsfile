@@ -12,7 +12,7 @@ pipeline {
         stage('Docker Login & Pull') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: dockerhublogin, 'passwordVariable': 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhublogin', 'passwordVariable': 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
                         sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
                     }
                     sh "docker pull ${DOCKER_IMAGE}:${DOCKER_TAG}"
