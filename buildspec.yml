@@ -26,7 +26,10 @@ phases:
       - docker push rajcosivadevops/cicdncplimage:latest
       - echo Writing imagedefinitions.json...
       - printf '[{"name":"sprinrajco","imageUri":"rajcosivadevops/cicdncplimage:latest"}]' > imagedefinitions.json
+      - echo Writing appspec.yml...
+      - cp appspec.yml .
 
 artifacts:
   files:
     - imagedefinitions.json
+    - appspec.yml
