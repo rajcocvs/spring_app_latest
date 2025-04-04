@@ -1,0 +1,8 @@
+version: 0.0
+Resources:
+  - myECSService:
+      Type: AWS::ECS::Service
+      Properties:
+        ClusterName: First  # The ECS cluster name
+        ServiceName: first  # The ECS service name
+        TaskDefinition: firsttaskdef:1 # Your ECS task definition
