@@ -3,6 +3,9 @@ Resources:
   - myECSService:
       Type: AWS::ECS::Service
       Properties:
-        ClusterName: First  # The ECS cluster name
-        ServiceName: first  # The ECS service name
-        TaskDefinition: firsttaskdef:1 # Your ECS task definition
+        ClusterName: First  # Your ECS cluster name
+        ServiceName: first  # Your ECS service name
+        TaskDefinition: firsttaskdef:1  # ECS task definition with the revision number
+        LoadBalancerInfo:
+          ContainerName: sprinrajco  # Container name as defined in the task definition
+          ContainerPort: 80  # The container port exposed
