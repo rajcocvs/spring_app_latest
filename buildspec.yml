@@ -28,7 +28,7 @@ phases:
       - ls -l
       - printf '[{"name":"sprinrajco","imageUri":"rajcosivadevops/cicdncplimage:latest"}]' > imagedefinitions.json
       - echo Writing appspec.yml...
-      - cp appspec.yml .
+      
 
 artifacts:
   files:
